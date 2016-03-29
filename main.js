@@ -1,5 +1,5 @@
 /*
-Development script, a cozier version of bundle.js
+A cozier, more simple version of bundle.js
 @krashanoff
 */
 
@@ -9,4 +9,4 @@ var buffer = new Buffer("hello world");
 
 var convert = base65536.encode(buffer);
 
-console.log(convert);
+document.write(convert);
