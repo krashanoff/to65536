@@ -1,3 +1,8 @@
+/*
+Development script, a cozier version of bundle.js
+@krashanoff
+*/
+
 var base65536 = require('base65536');
 
 var buffer = new Buffer("hello world");
