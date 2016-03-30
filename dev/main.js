@@ -5,13 +5,8 @@ A cozier main.min.js (before it gets mangled)
 
 var base65536 = require('base65536');
 
-var buf = new Buffer(current);
+var buf = new Buffer("MOTD");
 
 var conv = base65536.encode(buf);
 
-function convertit(){
-
-  var current = document.getElementById('textIn').value;
-
-  console.log(conv);
-}
+document.write(conv);
