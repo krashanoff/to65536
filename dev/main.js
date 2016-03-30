@@ -3,7 +3,9 @@ A cozier main.min.js (before it gets mangled)
 @krashanoff
 */
 
-var base65536 = require('base65536');
+$(document).ready(function(){
+  var base65536 = require('base65536');
+});
 
 //Each time the plaintext field changes, log the output
 $('#plaintext').bind('input', function() {
