@@ -7,7 +7,7 @@ var base65536 = require('base65536');
 
 //Each time the plaintext field changes, log the output
 $('#plaintext').bind('input', function() {
-    var current = $(this).val();
+    var current = document.getElementById('plaintext').value;
 
     var buf = new Buffer(current);
 
