@@ -3,17 +3,15 @@ A cozier main.min.js (before it gets mangled)
 @krashanoff
 */
 
-$(document).ready(function(){
-  var base65536 = require('base65536');
-});
+var base65536 = require('base65536');
 
-//Each time the plaintext field changes, log the output
-$('#plaintext').bind('input', function() {
-    var current = document.getElementById('plaintext').value;
+var buf = new Buffer(current);
 
-    var buf = new Buffer(current);
+var conv = base65536.encode(buf);
 
-    var conv = base65536.encode(buf);
+function convertit(){
 
-    console.log(conv);
-});
+  var current = document.getElementById('textIn').value;
+
+  console.log(conv);
+}
