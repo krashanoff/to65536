@@ -14,5 +14,4 @@ var buf = new Buffer(motd);
 var conv = base65536.encode(buf);
 
 //Write to document
-document.write(conv);
-document.write(motd);
+document.write(conv + "<br />" + "<br />" + motd);
