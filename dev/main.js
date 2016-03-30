@@ -5,14 +5,13 @@ A cozier main.min.js (before it gets mangled)
 
 var base65536 = require('base65536');
 
-var plaintext = document.getElementById('plaintext').value;
-
 //Each time the plaintext field changes, log the output
-$('#plaintext').change(function(){
+$('#plaintext').bind('input', function() {
+    var current = $(this).val();
 
-  var buffer = new Buffer(plaintext);
+    var buf = new Buffer(current);
 
-  var convert = base65536.encode(buffer);
+    var conv = base65536.encode(buf);
 
-  console.log(convert);
+    console.log(conv);
 });
