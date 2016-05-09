@@ -7,11 +7,14 @@ A cozier main.min.js (before it gets mangled)
 var base65536 = require('base65536');
 
 //Main code
-var motd = "Hello.  This will eventually become a thing where you can convert from base65536 to plaintext and vice versa";
+function twosix(){
+  var plaintextValue = document.querySelector("#plaintext").value;
 
-var buf = new Buffer(motd);
+  var outputDiv = document.querySelector("#output");
 
-var conv = base65536.encode(buf);
+  var buf = new Buffer(plaintextValue);
 
-//Write to document
-document.write(conv + "<br />" + "<br />" + motd);
+  var conv = base65536.encode(buf);
+
+  outputDiv.textContent = conv;
+};
