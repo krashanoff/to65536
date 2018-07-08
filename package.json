@@ -1,0 +1,25 @@
+{
+  "name": "to65536",
+  "version": "0.0.1",
+  "description": "Simple site for converting to and from base65536",
+  "dependencies": {
+    "base65536": "^2.0.2"
+  },
+  "devDependencies": {
+    "browserify": "^16.2.2",
+    "http-server": "^0.11.1"
+  },
+  "scripts": {
+    "serve": "browserify main.js > bundle.js && http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krashanoff/to65536.git"
+  },
+  "author": "Leonid Krashanoff <lkrashanoff2@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krashanoff/to65536/issues"
+  },
+  "homepage": "https://github.com/krashanoff/to65536#readme"
+}

@@ -1,16 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
-  <title>to65536</title>
+    <title>to65536</title>
+    <meta charset='utf-8'>
+    <link rel='stylesheet' type='text/css' href='main.css'>
 </head>
 <body>
-  <input type="text" id="plaintext" value="Write"></input>
-
-  <button onclick="twosix()">Write here to convert</button>
-
-  <div id="output">
-  </div>
-
-  <script src="dev/main.unmin.js"></script>
+    <div id='top'>
+        <p>Text</p>
+        <textarea id='txt' type='text' spellcheck='false' autocapitalize='off' autocomplete='off' autocorrect='off' wrap='SOFT' onkeyup='toSix()'></textarea>
+    </div>
+    
+    <div id='bottom'>
+        <p>base65536</p>
+        <textarea id='six' type='text' spellcheck='false' autocapitalize='off' autocomplete='off' autocorrect='off' wrap='SOFT' onkeyup='fromSix()'></textarea>
+    </div>
 </body>
+<script src='bundle.js'></script>
 </html>
