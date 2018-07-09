@@ -6,15 +6,25 @@
     <link rel='stylesheet' type='text/css' href='main.css'>
 </head>
 <body>
-    <div id='top'>
-        <p>Text</p>
-        <textarea id='txt' type='text' spellcheck='false' autocapitalize='off' autocomplete='off' autocorrect='off' wrap='SOFT' onkeyup='toSix()'></textarea>
-    </div>
-    
-    <div id='bottom'>
-        <p>base65536</p>
-        <textarea id='six' type='text' spellcheck='false' autocapitalize='off' autocomplete='off' autocorrect='off' wrap='SOFT' onkeyup='fromSix()'></textarea>
+    <div id='app'>
+        <div id='encode'>
+            <p>Text</p>
+            <textarea id='txt' class='code' type='text' spellcheck='false' autocapitalize='off' autocomplete='off' autocorrect='off' wrap='SOFT' onfocus="this.value='';" onkeyup='toSix()'>Encode.</textarea>
+        </div>
+        
+        <div id='decode'>
+            <p>base65536</p>
+            <textarea id='six' class='code' type='text' spellcheck='false' autocapitalize='off' autocomplete='off' autocorrect='off' wrap='SOFT' onfocus="this.value='';" onkeyup='fromSix()'>Decode.</textarea>
+        </div>
     </div>
 </body>
 <script src='bundle.js'></script>
+<script src='https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'></script>
+<script>
+    WebFont.load({
+        google: {
+            families: ['Roboto Mono', 'Open Sans']
+        }
+    });
+</script>
 </html>

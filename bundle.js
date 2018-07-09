@@ -1,29 +1,37 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 const base = require('base65536');
+var encoder, decoder, text;
 
-var encoder = new TextEncoder();
-var decoder = new TextDecoder();
+encoder = new TextEncoder();
+decoder = new TextDecoder();
 
 // Fired on change of text area.
 window.toSix = function() {
-    // Get contents.
-    var text = document.querySelector('#txt').value;
+    // Get contents of the text area.
+    text = document.querySelector('#txt').value;
+
+    // Change variable to encoded input.
     text = base.encode(encoder.encode(text));
     
+    // Set value of base65536 text area to encoded result.
     document.querySelector('#six').value = text;
 }
 
 // Fired on change of base65536 area.
 window.fromSix = function() {
-    var text = document.querySelector('#six').value;
-    text = decoder.decode(base.decode(text));
+    // Get contents of the base65536 area.
+    text = document.querySelector('#six').value;
 
-    document.querySelector('#txt').value = text;
+    // Change text variable to decoded input, returning error message if it is not valid.
+    try {
+        text = decoder.decode(base.decode(text));
+    } catch (error) {
+        text = 'Not proper base65536.';
+    } finally {
+        // Set value of text area to decoded result.
+        document.querySelector('#txt').value = text;
+    }
 }
-
-/* TODO:
- * Expose functions to global namespace, instead of using the hack around doing so.
- */
 },{"base65536":2}],2:[function(require,module,exports){
 /**
  * Routines for converting binary data into text data which can be sent safely
