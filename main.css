@@ -14,34 +14,43 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-size: 2em;
     background: var(--owhite);
+    line-height: 1.4em;
+}
+
+#bar {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 10%;
+    margin: 0 auto;
+    background: var(--oblack);
+    color: var(--owhite);
+    box-shadow: var(--nofocusboxshadow);
 }
 
 #app {
-    height: 90vh;
-    width: 70vw;
-    margin: 0 auto;
+    height: 90%;
+    width: 90%;
+    margin: 5% auto;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
 
+.card {
+    text-align: center;
+}
+
 .code {
-    width: 100%;
-    height: 60%;
+    width: 90%;
+    height: 100%;
     font-family: 'Roboto Mono', monospace;
     font-size: 1.2em;
     background: var(--owhite);
     box-shadow: var(--nofocusboxshadow);
     transition: box-shadow .5s var(--cubicdefault);
-}
-
-#encode {
-    text-align: center;
-}
-
-#decode {
-    text-align: center;
 }
 
 textarea:focus {

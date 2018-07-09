@@ -6,13 +6,16 @@
     <link rel='stylesheet' type='text/css' href='main.css'>
 </head>
 <body>
+    <div id='bar'>
+        <p id='title'>to65536</p>
+    </div>
     <div id='app'>
-        <div id='encode'>
+        <div id='encode' class='card'>
             <p>Text</p>
             <textarea id='txt' class='code' type='text' spellcheck='false' autocapitalize='off' autocomplete='off' autocorrect='off' wrap='SOFT' onfocus="this.value='';" onkeyup='toSix()'>Encode.</textarea>
         </div>
         
-        <div id='decode'>
+        <div id='decode' class='card'>
             <p>base65536</p>
             <textarea id='six' class='code' type='text' spellcheck='false' autocapitalize='off' autocomplete='off' autocorrect='off' wrap='SOFT' onfocus="this.value='';" onkeyup='fromSix()'>Decode.</textarea>
         </div>
