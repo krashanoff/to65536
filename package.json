@@ -10,7 +10,8 @@
     "http-server": "^0.11.1"
   },
   "scripts": {
-    "serve": "browserify main.js > bundle.js && http-server"
+    "bundle": "browserify src\/main.js > src\/bundle.js",
+    "serve": "npm run bundle && http-server"
   },
   "repository": {
     "type": "git",

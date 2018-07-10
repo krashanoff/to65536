@@ -1,38 +1,4 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-const base = require('base65536');
-var encoder, decoder, text;
-
-encoder = new TextEncoder();
-decoder = new TextDecoder();
-
-// Fired on change of text area.
-window.toSix = function() {
-    // Get contents of the text area.
-    text = document.querySelector('#txt').value;
-
-    // Change variable to encoded input.
-    text = base.encode(encoder.encode(text));
-    
-    // Set value of base65536 text area to encoded result.
-    document.querySelector('#six').value = text;
-}
-
-// Fired on change of base65536 area.
-window.fromSix = function() {
-    // Get contents of the base65536 area.
-    text = document.querySelector('#six').value;
-
-    // Change text variable to decoded input, returning error message if it is not valid.
-    try {
-        text = decoder.decode(base.decode(text));
-    } catch (error) {
-        text = 'Not proper base65536.';
-    } finally {
-        // Set value of text area to decoded result.
-        document.querySelector('#txt').value = text;
-    }
-}
-},{"base65536":2}],2:[function(require,module,exports){
 /**
  * Routines for converting binary data into text data which can be sent safely
  * through 'Unicode-clean' text systems without information being lost. Analogous
@@ -172,4 +138,44 @@ exports.decode = function (str, ignoreGarbage) {
 };
 exports["default"] = { encode: exports.encode, decode: exports.decode };
 
-},{}]},{},[1]);
+},{}],2:[function(require,module,exports){
+const base = require('base65536');
+const encoder = new TextEncoder();
+const decoder = new TextDecoder();
+const txtarea = document.querySelector('#txt');
+const basearea = document.querySelector('#six');
+
+var text;
+
+// Fired on change of text area.
+toSix = function() {
+    // Get contents of the text area.
+    text = txtarea.value;
+
+    // Change variable to encoded input.
+    text = base.encode(encoder.encode(text));
+    
+    // Set value of base65536 text area to encoded result.
+    basearea.value = text;
+}
+
+// Fired on change of base65536 area.
+fromSix = function() {
+    // Get contents of the base65536 area.
+    text = basearea.value;
+
+    // Change text variable to decoded input, returning error message if it is not valid.
+    try {
+        text = decoder.decode(base.decode(text));
+    } catch (error) {
+        text = 'Not proper base65536.';
+    } finally {
+        // Set value of text area to decoded result.
+        txtarea.value = text;
+    }
+}
+
+// Add event listeners.
+txtarea.addEventListener('input', toSix, false);
+basearea.addEventListener('input', fromSix, false);
+},{"base65536":1}]},{},[2]);

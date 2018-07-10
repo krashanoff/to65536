@@ -29,6 +29,10 @@ body {
     box-shadow: var(--nofocusboxshadow);
 }
 
+#title {
+    margin: 2%;
+}
+
 #app {
     height: 90%;
     width: 90%;

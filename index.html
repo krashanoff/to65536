@@ -3,7 +3,7 @@
 <head>
     <title>to65536</title>
     <meta charset='utf-8'>
-    <link rel='stylesheet' type='text/css' href='main.css'>
+    <link rel='stylesheet' type='text/css' href='src/main.css'>
 </head>
 <body>
     <div id='bar'>
@@ -12,16 +12,20 @@
     <div id='app'>
         <div id='encode' class='card'>
             <p>Text</p>
-            <textarea id='txt' class='code' type='text' spellcheck='false' autocapitalize='off' autocomplete='off' autocorrect='off' wrap='SOFT' onfocus="this.value='';" onkeyup='toSix()'>Encode.</textarea>
+            <textarea id='txt' class='code' type='text' spellcheck='false' autocapitalize='off' autocomplete='off' autocorrect='off' wrap='SOFT' onfocus="this.value='';">Encode.</textarea>
         </div>
         
         <div id='decode' class='card'>
             <p>base65536</p>
-            <textarea id='six' class='code' type='text' spellcheck='false' autocapitalize='off' autocomplete='off' autocorrect='off' wrap='SOFT' onfocus="this.value='';" onkeyup='fromSix()'>Decode.</textarea>
+            <textarea id='six' class='code' type='text' spellcheck='false' autocapitalize='off' autocomplete='off' autocorrect='off' wrap='SOFT' onfocus="this.value='';">Decode.</textarea>
         </div>
     </div>
 </body>
-<script src='bundle.js'></script>
+
+<script src='https://raw.githubusercontent.com/inexorabletash/text-encoding/master/lib/encoding-indexes.js'></script>
+<script src='https://raw.githubusercontent.com/inexorabletash/text-encoding/master/lib/encoding.js'></script>
+<script src='src/bundle.js'></script>
+
 <script src='https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'></script>
 <script>
     WebFont.load({

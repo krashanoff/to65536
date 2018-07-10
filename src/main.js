@@ -1,25 +1,27 @@
 const base = require('base65536');
-var encoder, decoder, text;
+const encoder = new TextEncoder();
+const decoder = new TextDecoder();
+const txtarea = document.querySelector('#txt');
+const basearea = document.querySelector('#six');
 
-encoder = new TextEncoder();
-decoder = new TextDecoder();
+var text;
 
 // Fired on change of text area.
-window.toSix = function() {
+toSix = function() {
     // Get contents of the text area.
-    text = document.querySelector('#txt').value;
+    text = txtarea.value;
 
     // Change variable to encoded input.
     text = base.encode(encoder.encode(text));
     
     // Set value of base65536 text area to encoded result.
-    document.querySelector('#six').value = text;
+    basearea.value = text;
 }
 
 // Fired on change of base65536 area.
-window.fromSix = function() {
+fromSix = function() {
     // Get contents of the base65536 area.
-    text = document.querySelector('#six').value;
+    text = basearea.value;
 
     // Change text variable to decoded input, returning error message if it is not valid.
     try {
@@ -28,6 +30,10 @@ window.fromSix = function() {
         text = 'Not proper base65536.';
     } finally {
         // Set value of text area to decoded result.
-        document.querySelector('#txt').value = text;
+        txtarea.value = text;
     }
 }
+
+// Add event listeners.
+txtarea.addEventListener('input', toSix, false);
+basearea.addEventListener('input', fromSix, false);
