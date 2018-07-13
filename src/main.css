@@ -6,6 +6,7 @@
     --cubicdefault: cubic-bezier(0.075, 0.82, 0.165, 1);
     --nofocusboxshadow: 1.5px 1.5px 12px 0px rgba(0,0,0,0.1);
     --focusboxshadow: 2.5px 2.5px 12px 0px rgba(0,0,0,0.3);
+    --barboxshadow: 0 3.5px 14px 0px rgba(0,0,0,0.3);
 }
 
 body {
@@ -21,16 +22,28 @@ body {
     position: relative;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
     width: 100%;
     height: 10%;
     margin: 0 auto;
     background: var(--oblack);
     color: var(--owhite);
-    box-shadow: var(--nofocusboxshadow);
+    box-shadow: var(--barboxshadow);
 }
 
 #title {
     margin: 2%;
+}
+
+#about {
+    margin: 2%;
+    text-decoration: none;
+    color: var(--owhite);
+}
+#about:active, #about:focus, #about:visited, #about:link {
+    text-decoration: none;
+    color: var(--owhite);
 }
 
 #app {
