@@ -6,12 +6,10 @@
     "base65536": "^2.0.2"
   },
   "devDependencies": {
-    "browserify": "^16.2.2",
-    "http-server": "^0.11.1"
+    "browserify": "^16.2.3"
   },
   "scripts": {
-    "bundle": "browserify src/main.js > src/bundle.js",
-    "serve": "npm run bundle && http-server"
+    "bundle": "browserify src/main.js > src/bundle.js"
   },
   "repository": {
     "type": "git",

@@ -2,37 +2,30 @@
 <html>
 <head>
     <title>to65536</title>
-    <meta charset='utf-8'>
     <link rel='stylesheet' type='text/css' href='src/main.css'>
+    <meta name='description' content='Convert to base65536 and back again!'>
+    <meta name='keywords' content='base65536,base64,convert,from,to'>
 </head>
 <body>
     <div id='bar'>
         <p id='title'>to65536</p>
         <a href='https://github.com/krashanoff/to65536' target='_blank' id='about'>About</a>
     </div>
-    <div id='app'>
+
+    <div id='content'>
         <div id='encode' class='card'>
             <p>Text</p>
-            <textarea id='txt' class='code' type='text' spellcheck='false' autocapitalize='off' autocomplete='off' autocorrect='off' wrap='SOFT'>Encode.</textarea>
+            <textarea id='txt' class='code' type='text' spellcheck='false' autocapitalize='off' autocomplete='off' autocorrect='off' wrap='SOFT'>Type here to encode</textarea>
         </div>
         
         <div id='decode' class='card'>
             <p>base65536</p>
-            <textarea id='six' class='code' type='text' spellcheck='false' autocapitalize='off' autocomplete='off' autocorrect='off' wrap='SOFT'>Decode.</textarea>
+            <textarea id='six' class='code' type='text' spellcheck='false' autocapitalize='off' autocomplete='off' autocorrect='off' wrap='SOFT'>Type here to decode</textarea>
         </div>
     </div>
+
+    <script src='https://raw.githubusercontent.com/inexorabletash/text-encoding/master/lib/encoding-indexes.js'></script>
+    <script src='https://raw.githubusercontent.com/inexorabletash/text-encoding/master/lib/encoding.js'></script>
+    <script src='src/bundle.js'></script>
 </body>
-
-<script src='https://raw.githubusercontent.com/inexorabletash/text-encoding/master/lib/encoding-indexes.js'></script>
-<script src='https://raw.githubusercontent.com/inexorabletash/text-encoding/master/lib/encoding.js'></script>
-<script src='src/bundle.js'></script>
-
-<script src='https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js'></script>
-<script>
-    WebFont.load({
-        google: {
-            families: ['Roboto Mono', 'Open Sans']
-        }
-    });
-</script>
 </html>
